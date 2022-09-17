@@ -1,0 +1,302 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"  runat="server">
+  
+    <link href ="css/crm_style.css" rel="stylesheet" type="text/css"/>
+   
+   <%-- <script type="text/javascript" src="Jscript/Menu.js"></script>--%>
+
+    <%--<link href="http://fonts.googleapis.com/css?family=Armata" rel='stylesheet' type='text/css'>--%>
+    
+    <title>GadgetGold - HelpDesk </title>  
+    <link rel="Shortcut Icon" href="images/icon.png" />
+   <link rel="stylesheet" type="text/css" href="css/menu_style.css" />
+   <script type="text/javascript" src="Jscript/mtmv.js"></script>
+   <link href ="css/doplus_style.css" rel="stylesheet" type="text/css"/>
+   <script type="text/javascript" language="javascript">
+       window.onload = blinkOn;
+
+       function blinkOn() {
+           document.getElementById("blink").style.color = "Black"
+           setTimeout("blinkOff()", 300)
+       }
+
+       function blinkOff() {
+           document.getElementById("blink").style.color = "Red"
+           setTimeout("blinkOn()", 300)
+       }
+ 
+ 
+ 
+</script>
+   <style type="text/css">
+   /* Begin Navigation Bar Styling */
+   #nav {
+      width: 95%;
+      float: left;
+      margin: 0 0 3em 0;
+      padding: 0;
+      list-style: none;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ccc; 
+      border-top: 1px solid #ccc;
+      height:30px;
+     
+      }
+   #nav li {
+      float: left;
+       height:30px;
+       }
+   #nav li a {
+      display: block;
+      padding: 5px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #069;
+      border-right: 1px solid #ccc;
+      height:15px;
+        }
+        
+   #nav li a:hover {
+      color: #c00;
+      background-color: #fff;
+       height:15px; 
+       }
+   /* End navigation bar styling. */
+   
+   /* This is just styling for this specific page. */
+ 
+</style>
+</head>
+<body style="background-image:url('images/body_bg.jpg'); margin:0px 0px 0px 0px">
+    <form id="form1" runat="server">
+      <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" ScriptMode="Release">
+ 
+        </asp:ScriptManager>
+<div id="wrapper">
+
+<div style=" width:100%; background-image: url('http://www.spjgadget.in/images/crop.png'); background-repeat: repeat; height:81px;">
+      <table style=" background-image: url('http://www.spjgadget.in/images/crop.png'); background-repeat: repeat; width:100%">
+      <tr>
+      <td valign="middle" style="width:30%; text-align:left">
+
+      <asp:ImageButton ID="ImageButton1" runat ="server" ImageAlign ="Middle" 
+              Width="70%" Height="76px" ImageUrl= "~/images/gadget_logo.png"  
+              style="text-align:center" CausesValidation="False" 
+              onclick="ImageButton1_Click" /> 
+   
+     <%-- <asp:ImageButton ID="ImgCompany" runat ="server" ImageAlign ="Middle" Width="350px" Height="38px" ImageUrl= "images/mkji_logo.png" />  
+   --%>
+      </td>
+     
+     <td valign="middle">
+     <table width="100%">
+
+     <tr>
+     <td valign="middle" colspan="2" style="text-align:right; padding-right:43px">
+      <a style="font-size:14px; color:#FFF; font-weight:bold; text-decoration:none">Welcome</a>&nbsp;&nbsp;
+      <asp:Label ID="lblusername" runat="server" Text="" Font-Bold="true" ForeColor="#FFF"  style="color:#D8D8D8"></asp:Label>
+     </td>
+     </tr>
+
+     <tr>
+     <td valign="middle" colspan="2" style="text-align:right">
+     <asp:HyperLink ForeColor ="#FFFFFF" NavigateUrl ="changePassword.aspx"  ID="HyperLink2" Text ="Change Password" runat ="server" Font-Bold="true" Font-Size="13px" ></asp:HyperLink> <span style="color:#FFF;"> &nbsp;| </span>
+	    <asp:LinkButton  ID="LinkButton1" CausesValidation="false" runat="server" 
+             ForeColor="#FFFFFF" Font-Bold="true" Font-Size="13px" 
+             onclick="LinkButton1_Click1" > LOG OUT </asp:LinkButton>
+        <span style="color:#FFF;"> | </span>
+     </td>
+     </tr>
+
+     <tr>
+
+     <td valign="middle" colspan="2" style=" text-align:right; padding-right:23px">
+      <asp:TextBox ID="txtsearch" runat="server" CssClass="search_textbox" Placeholder="Search"
+           AutoPostBack="True" ontextchanged="txtsearch_TextChanged1"></asp:TextBox>
+     </td>
+    
+     </tr>
+     </table>
+     </td>
+  
+      </tr>
+   
+  </table>  
+ </div>
+ <center>
+
+ <div style="background-color:#fff; height:0.5px; width:100%">   </div>
+
+ <table width="100%" cellpadding="0" cellspacing="0" style=" height:30px; ">
+    
+    <tr>
+    <td valign="top"  style="width:12%; background-image: url('http://www.spjgadget.in/images/crop.png'); background-repeat: repeat;">
+    <ul id="menu-v" style=" ">
+     <li><asp:HyperLink ID="HyperLink24" runat="server" NavigateUrl="home.aspx"  >HOME</asp:HyperLink></li>
+
+    <li><asp:HyperLink ID="Hypl_user" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >CREATE LOGIN</asp:HyperLink>
+   
+      <ul class="sub">
+         
+      <li><asp:HyperLink ID="HyperLink25" runat="server" NavigateUrl="Branch/generate_branch.aspx">Create User</asp:HyperLink></li>
+      <li><asp:HyperLink ID="HyperLink26" runat="server" NavigateUrl="Branch/Show_Branch_Login_Details.aspx">View User Details</asp:HyperLink></li>
+      
+      </ul>
+        
+    </li>
+    <li><asp:HyperLink ID="HyperLink23" runat="server" NavigateUrl="lead_allocation.aspx">LEAD ALLOCATION</asp:HyperLink></li>
+   
+      <li><asp:HyperLink ID="hypldash" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >DASH BOARD</asp:HyperLink>
+   
+        <ul class="sub">
+         <li><asp:HyperLink ID="hypldailytransction" runat="server" NavigateUrl="~/Sales/Daily_sale_Transaction.aspx">Daily Sales Transaction</asp:HyperLink></li>
+ <li><asp:HyperLink ID="hyplsaleperformance" runat="server" NavigateUrl="~/Sales/Sale_agent_performance.aspx">Sales Agent Performance</asp:HyperLink></li>
+      
+         <li><asp:HyperLink ID="hyplmylead" runat="server" NavigateUrl="~/Sales/my_lead_details.aspx">MY Lead Details</asp:HyperLink></li>
+         <li><asp:HyperLink ID="hyplmydash" runat="server" NavigateUrl="~/Sales/my_dashboard.aspx">MY Dash Board</asp:HyperLink></li>
+           </ul>
+         
+    </li>
+    <li><asp:HyperLink ID="hypl_sale" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >LEAD</asp:HyperLink>
+   
+        <ul class="sub">
+         <li><asp:HyperLink ID="HyperLink16" runat="server" NavigateUrl="~/Sales/CreateLead.aspx">Create Lead</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl="~/Sales/Lead_select.aspx">Lead View</asp:HyperLink></li>
+        </ul>
+    </li>
+    <li><asp:HyperLink ID="HyperLink29" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >SERVICE INVOICE</asp:HyperLink>
+        <ul class="sub">
+        <li><asp:HyperLink ID="HyperLink30" runat="server" NavigateUrl="~/Invoice/CreateInvoice.aspx">Create Service Invoice</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink32" runat="server" NavigateUrl="~/Invoice/View_Invoice.aspx">View Service Invoice</asp:HyperLink></li>
+       </ul>
+    
+    </li>
+     <li><asp:HyperLink ID="HyperLink18" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >JOBWORK</asp:HyperLink>
+   
+        <ul class="sub">
+         <li><asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl="~/Jobwork/insert_jobwork.aspx">Create JobWork</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl="~/Jobwork/View_Jobwork.aspx">View JobWork</asp:HyperLink></li>
+        </ul>
+    </li>
+      <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >REPAIR INVOICE</asp:HyperLink>
+        <ul class="sub">
+        <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Invoice/Repair_invoice_insert.aspx">Create Repair Invoice</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink34" runat="server" NavigateUrl="~/Invoice/View_Repair.aspx">View Repair Invoice</asp:HyperLink></li>
+       </ul>
+    
+    </li>
+     
+     
+    
+     <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="home.aspx" CssClass="arrow" > EXPENSE </asp:HyperLink>
+
+      <ul class="sub">
+      <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Expense/Expance_Entry.aspx">Expense Entry</asp:HyperLink></li>
+      <li><asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Expense/view_expance_details.aspx">View Expense Details</asp:HyperLink></li>
+      </ul>
+     </li>
+
+     <li><asp:HyperLink ID="HyperLink31" runat="server" NavigateUrl="home.aspx" CssClass="arrow" > PURCHASE </asp:HyperLink>
+
+      <ul class="sub">
+      <li><asp:HyperLink ID="HyperLink33" runat="server" NavigateUrl="~/Inventory/Product_Purchase.aspx">Purchase Entry</asp:HyperLink></li>
+      <li><asp:HyperLink ID="HyperLink35" runat="server" NavigateUrl="~/Inventory/Product_Purchase_View.aspx">View Product</asp:HyperLink></li>
+      </ul>
+     </li>
+      <li><asp:HyperLink ID="HyperLink15" runat="server" NavigateUrl="home.aspx" CssClass="arrow" > INVENTORY </asp:HyperLink>
+
+      <ul class="sub">
+      <li><asp:HyperLink ID="HyperLink27" runat="server" NavigateUrl="~/Inventory/Inventory_Product.aspx">Product Entry</asp:HyperLink></li>
+      <li><asp:HyperLink ID="HyperLink28" runat="server" NavigateUrl="~/Inventory/Inventory_Product_View.aspx">View Product</asp:HyperLink></li>
+      </ul>
+     </li>
+     <li><asp:HyperLink ID="HyperLink36" runat="server" NavigateUrl="home.aspx" CssClass="arrow" > PRODUCT SALES </asp:HyperLink>
+
+      <ul class="sub">
+      <li><asp:HyperLink ID="HyperLink37" runat="server" NavigateUrl="~/Inventory/SalesProduct.aspx">Sales Entry</asp:HyperLink></li>
+      <li><asp:HyperLink ID="HyperLink38" runat="server" NavigateUrl="~/Inventory/View_Sales_Product.aspx">View Sales</asp:HyperLink></li>
+      </ul>
+     </li>
+     <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >REFUNDS</asp:HyperLink>
+   
+     <ul class="sub">
+     <li><asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/Refund/Refund_Service_Invoice.aspx">Service Invoice Refund</asp:HyperLink></li>
+     <li><asp:HyperLink ID="HyperLink14" runat="server" NavigateUrl="~/Refund/View_Service_Refund.aspx">View Service Refund</asp:HyperLink></li>
+   
+     <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Refund/Refund_Repair_Invoice.aspx">Repair Invoice Refund</asp:HyperLink></li>
+       <li><asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Refund/View_Repair_Refund.aspx">View Repair Refund </asp:HyperLink></li>
+      </ul>
+     </li> 
+     <li><asp:HyperLink ID="hypl_dev" runat="server" NavigateUrl="home.aspx" CssClass="arrow" >REPORTS</asp:HyperLink>
+   
+     <ul class="sub">
+     <li><asp:HyperLink ID="hypldomain" runat="server" NavigateUrl="~/Report/LeadReport.aspx">Lead Report</asp:HyperLink></li>
+       <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Report/service_invoice_report.aspx">Service Invoice Report</asp:HyperLink></li>
+      <li><asp:HyperLink ID="HyperLink19" runat="server" NavigateUrl="~/Report/Repair_Report.aspx">Repair Invoice Report</asp:HyperLink></li>
+     <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Report/JobworkReport.aspx">Job Work Report</asp:HyperLink></li>
+     </ul>
+     </li> 
+     
+        
+    
+     <li><asp:HyperLink ID="HyperLink1" runat="server" target="_blank" NavigateUrl="https://www.sagoni.com/sagoni_help.aspx">HELP</asp:HyperLink></li>
+</ul>
+    </td>
+    <td valign="top" style="width:100%;">
+    <center>
+
+
+    
+    <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+               
+             
+            </asp:ContentPlaceHolder>
+        </div>
+</center>
+    </td>
+    </tr>
+
+    </table>
+
+
+
+ 
+ </center>
+
+
+   
+   </div>
+
+        <!--endcontent-->
+  
+    <!--endwrapper-->
+    <center>
+    <div id="footerwrapper">
+	<div style="width:100%; background-color:#333333; height:50px">
+    <table  width="960px">
+    <tr>
+    <td valign="middle" style="text-align:left">
+    <p style="margin-top:15px">
+    <a href="#" style="color:white; font-family:Calibri; font-size:12px; text-decoration:none;"><b>© 2015 
+     GADGETGOLD E-SERVICE All rights reserved</b></a><br />
+    </p>
+    </td>
+    <td valign="middle" style="text-align:right">
+    <p style="margin-top:15px" >
+    <a href="http://www.sagoni.com/" target="_blank" style="color:white; font-family:Calibri; font-size:12px; text-decoration:none;"><b>Developed By SAGONI INDIA PRIVATE LIMITED</b></a><br />
+    </p>
+    </td>
+    </tr>
+    </table>
+    </div>
+</div>
+    </center>
+  
+    </form>
+</body>
+</html>
